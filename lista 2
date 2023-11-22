@@ -1,0 +1,45 @@
+#include<stdio.h>
+
+typedef struct {
+    
+    int filhos;
+    float salario;
+    
+}Dados;
+
+int main(){
+    
+    Dados dados[5];
+    int l,psalario = 0,ps;
+    float mediaf,medias,somas,somaf;
+    
+    somas = 0;
+    
+    for(l=0;l<5;l++)
+    {
+        printf("\nHABITANTE %d\n\n",l+1);
+        printf("Insira o numero de filhos: ");
+        scanf("%d", &dados[l].filhos);
+        printf("Insira o seu salario: ");
+        scanf("%f",&dados[l].salario);
+        
+        
+        somas = somas + dados[l].salario;
+        somaf = somaf + dados[l].filhos;
+        
+        if(dados[l].salario < 350)
+        {
+            psalario++;
+        }
+    }
+    
+        mediaf = somaf / 5;
+        medias = somas / 5;
+        ps = psalario * 20;
+        
+        printf("\nA media de salario e: %2.f", medias);
+        printf("\nA media de filhos e: %2.f", mediaf);
+        printf("\nA porcentagem de pessoas com salario de ate R$350: %d%",ps);
+    
+    
+}
