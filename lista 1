@@ -1,0 +1,47 @@
+/*02- Escreva um programa que peça ao utilizador o número, nome e nota de dois testes dos alunos de uma
+turma, guarde essa informação numa estrutura, e mostre a pauta com os seguintes campos: número,
+nome, nota1, nota2, média.*/
+
+#include <stdio.h>
+#include <string.h>
+
+typedef struct{
+    
+    int numero,nota1,nota2;
+    char nome[20];
+    float media;
+}Info;
+
+int main()
+{
+    Info info[3];
+    int l;
+    
+    for(l=0;l<3;l++)
+    {
+        printf("\nUSUARIO %d\n\n", l);
+        printf("Numero: ");
+        scanf("%d",&info[l].numero);
+        printf("Nome: ");
+        scanf("%s", info[l].nome);
+        printf("Nota 1: ");
+        scanf("%d",&info[l].nota1);
+        printf("Nota 2: ");
+        scanf("%d",&info[l].nota2);
+        
+        info[l].media = (info[l].nota1 + info[l].nota2)/2;
+        
+    }
+    for(l=0;l<3;l++)
+    {
+        printf("\n\nRESULTADO USUARIO %d\n\n",l);
+        printf("Numero: %d",info[l].numero);
+        printf("\nNome: %s", info[l].nome);
+        printf("\nNota 1: %d", info[l].nota1);
+        printf("\nNota 2: %d", info[l].nota2);
+        printf("\nMedia: %2.f", info[l].media);
+        
+    }
+
+    return 0;
+}
